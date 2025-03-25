@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application & EMI Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+        }
+        .image-container p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+    </style>
+    <script>
+        function showEMIImage(button) {
+            document.getElementById('emiImageContainer').style.display = 'block';
+            button.style.background = 'blue';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.mp4" alt="Company Logo" class="logo">
+        <h2>Loan Services</h2>
+        <div class="button-container">
+            <button onclick="location.href='apply-loan.html'">Apply New Loan</button>
+            <button onclick="location.href='emi-statement.html'">EMI Statement</button>
+            <button onclick="location.href='emi-payment.html'">EMI Payment</button>
+            <button onclick="showEMIImage(this)">Pay Your EMI</button>
+        </div>
+        <div class="image-container" id="emiImageContainer">
+            <p>Hello User</p>
+            <img src="pay-emi.jpg" alt="Pay Your EMI">
+        </div>
+    </div>
+</body>
+</html>
