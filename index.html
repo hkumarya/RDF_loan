@@ -44,6 +44,7 @@
         }
         .image-container {
             margin-top: 20px;
+            display: none;
         }
         .image-container img {
             width: 100%;
@@ -51,17 +52,22 @@
             border-radius: 8px;
         }
     </style>
+    <script>
+        function showEMIImage() {
+            document.getElementById('emiImageContainer').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <h2>RDF Loan Services</h2>
+        <h2>Loan Services</h2>
         <div class="button-container">
             <button onclick="location.href='apply-loan.html'">Apply New Loan</button>
             <button onclick="location.href='emi-statement.html'">EMI Statement</button>
-            <button onclick="location.href='emi-payment.html'">Upload EMI Payment Details</button>
-            <button onclick="location.href='pay-your-emi.html'">Pay Your EMI</button>
+            <button onclick="location.href='emi-payment.html'">EMI Payment</button>
+            <button onclick="showEMIImage()">Pay Your EMI</button>
         </div>
-        <div class="image-container">
+        <div class="image-container" id="emiImageContainer">
             <img src="pay-emi.jpg" alt="Pay Your EMI">
         </div>
     </div>
