@@ -38,6 +38,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background 0.3s;
         }
         button:hover {
             background: #218838;
@@ -59,8 +60,9 @@
         }
     </style>
     <script>
-        function showEMIImage() {
+        function showEMIImage(button) {
             document.getElementById('emiImageContainer').style.display = 'block';
+            button.style.background = 'blue';
         }
     </script>
 </head>
@@ -71,7 +73,7 @@
             <button onclick="location.href='apply-loan.html'">Apply New Loan</button>
             <button onclick="location.href='emi-statement.html'">EMI Statement</button>
             <button onclick="location.href='emi-payment.html'">Upload EMI Payment Details</button>
-            <button onclick="showEMIImage()">Pay Your EMI</button>
+            <button onclick="showEMIImage(this)">Pay Your EMI</button>
         </div>
         <div class="image-container" id="emiImageContainer">
             <p>After your payment please share your screen shot on whatapp/कृपया भुगतान के बाद अपना स्क्रीनशॉट व्हाट्सएप पर साझा करें।</p>
