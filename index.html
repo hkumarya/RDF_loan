@@ -45,6 +45,12 @@
         .image-container {
             margin-top: 20px;
             display: none;
+            text-align: center;
+        }
+        .image-container p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
         }
         .image-container img {
             width: 100%;
@@ -64,10 +70,11 @@
         <div class="button-container">
             <button onclick="location.href='apply-loan.html'">Apply New Loan</button>
             <button onclick="location.href='emi-statement.html'">EMI Statement</button>
-            <button onclick="location.href='emi-payment.html'">Upload EMI Payment Details</button>
+            <button onclick="location.href='emi-payment.html'">EMI Payment</button>
             <button onclick="showEMIImage()">Pay Your EMI</button>
         </div>
         <div class="image-container" id="emiImageContainer">
+            <p>Hello User</p>
             <img src="pay-emi.jpg" alt="Pay Your EMI">
         </div>
     </div>
