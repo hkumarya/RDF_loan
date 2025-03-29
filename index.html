@@ -67,6 +67,11 @@
             document.getElementById('emiImageContainer').style.display = 'block';
             button.style.background = 'blue';
         }
+        function openEMIStatementForm() {
+
+        window.open('emi-statement-form.html', '_blank');
+
+        } 
     </script>
 </head>
 <body>
@@ -75,7 +80,8 @@
         <h2> </h2>
         <div class="button-container">
             <button onclick="window.open('https://docs.google.com/forms/d/19jAVSFA99xSMJkKv403RKiSd2mfxoyLkRR-lbsQIdk4/edit', '_blank')">Apply New Loan</button>
-            <button onclick="location.href='emi-statement.html'">EMI Statement</button>
+            <!--button onclick="location.href='emi-statement.html'">EMI Statement</button-->
+            <button onclick="openEMIStatementForm()">EMI Statement</button>
             <!-- <button onclick="window.open('https://docs.google.com/forms/d/1wSoDb_NKEZYTKYCLEe0N-u4W6yogO2CUbjcEEHfqMik/edit', '_blank')">Upload EMI Payment Details</button> -->
             <button onclick="window.open('/forms/loan-emi-payment-form.html', '_blank')">Upload EMI Payment Details</button>
             <button onclick="showEMIImage(this)">Pay Your EMI</button>
