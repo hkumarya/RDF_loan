@@ -23,6 +23,18 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 300px;
+            position: relative;
+        }
+        home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            background: url('home-icon.png') no-repeat center;
+            background-size: contain;
+            border: none;
+            cursor: pointer;
         }
         input {
             width: 100%;
@@ -48,6 +60,7 @@
 </head>
 <body>
     <div class="form-container">
+        <button class="home-button" onclick="location.href='index.html'"></button>
         <h2>EMI Statement</h2>
         <form action="submit-emi-statement.php" method="post">
             <input type="text" name="loan_account_number" placeholder="Loan Account Number" required>
