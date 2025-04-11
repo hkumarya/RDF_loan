@@ -63,6 +63,38 @@
         button:hover {
             background: #218838;
         }
+        #loader {
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0.6;
+            /* background-color: white; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+          /* Spinner */
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+            /* Hide content initially */
+        #loader {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -77,8 +109,12 @@
             <button type="button" onclick="javascript:do_login();">Submit</button>
         </form>
     </div>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
     <script>
         function do_login(){
+               document.getElementById('loader').style.display='flex';
                let accountNumber =  document.getElementById('loan_account_number').value;
                let pin =  document.getElementById('pin').value;
                if(accountNumber && pin){
@@ -102,11 +138,13 @@
                         }).then(data =>{
                             // console.log('data',data)
                             document.write(data)
+                            document.getElementById('loader').style='none';
                         })
 
                     }
                     else{
                         alert('Kindly enter correct account number and pin.')
+                        document.getElementById('loader').style='none';
                     }
                 })
                 .catch(error => console.error('Fetch error:', error));
