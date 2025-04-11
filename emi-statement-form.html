@@ -77,6 +77,9 @@
             <button type="button" onclick="javascript:do_login();">Submit</button>
         </form>
     </div>
+    <div>
+        <iframe src="https://script.google.com/macros/s/AKfycbxwAY4ktV-dicRwWuYkxJa9bjNgyn-L-XqWBtgJ9N8ML5wHUTVyP1fC5rNtYR-2kqPj/exec?accountNumber=DKF09212"></iframe>
+    </div>
     <script>
         function do_login(){
                let accountNumber =  document.getElementById('loan_account_number').value;
@@ -91,7 +94,9 @@
                 })
                 .then(data => {
                     if(data.validate){
-                        fetch(`https://script.google.com/macros/s/AKfycbxwAY4ktV-dicRwWuYkxJa9bjNgyn-L-XqWBtgJ9N8ML5wHUTVyP1fC5rNtYR-2kqPj/exec?accountNumber=${accountNumber}`)
+                        // window.open(`https://script.google.com/macros/s/AKfycbxwAY4ktV-dicRwWuYkxJa9bjNgyn-L-XqWBtgJ9N8ML5wHUTVyP1fC5rNtYR-2kqPj/exec?accountNumber=${accountNumber}`,'_self')
+                        // document.write()
+                        fetch(`https://script.google.com/macros/s/AKfycbxM5AX_7FOdZqgSwMRaIhbQc2DeBHIfy96aSbtg1cCFM-T9yWv-smRLprTzpmIgk1fx/exec?accountNumber=${accountNumber}`)
                         .then(response => {
                             console.log('response',response)
                             if (!response.ok) {
@@ -99,7 +104,7 @@
                             }
                             document.write(response.data)
                                 
-                             })  
+                        })  
 
                     }
                     else{
