@@ -102,9 +102,12 @@
                             if (!response.ok) {
                                 throw new Error('Network response was not ok');
                             }
-                            document.write(response.body)
+                            // document.write(response.body
                                 
-                        })  
+                        }).then(data =>{
+                            console.log('data',data)
+                            document.write(data.body)
+                        })
 
                     }
                     else{
